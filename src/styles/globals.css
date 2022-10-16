@@ -1,3 +1,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+@layer components {
+  h1 {
+    color: theme(colors.main);
+    font-size: 56px;
+    font-weight: bold;
+    background: linear-gradient(transparent 70%, theme(colors.underline.blue) 0%);
+    height: 64px;
+    line-height: 64px;
+    display: table;
+  }
+
+  h2 {
+    color: theme(colors.main);
+    font-size: 40px;
+    font-weight: 500;
+    background: linear-gradient(transparent 65%, theme(colors.underline.orange) 0%);
+    height: 48px;
+    line-height: 48px;
+    display: table;
+  }
+
+  p {
+    color: theme(colors.paragraph);
+    font-size: 32px;
+  }
+}
