@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: reactive_everyday_next
+    volumes:
+      - .:/usr/src/app
+    command: sh -c 'yarn && yarn dev'
+    ports:
+      - '3000:3000'
+      - '8080:8080'
+    tty: true
