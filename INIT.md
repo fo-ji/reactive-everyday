@@ -105,3 +105,33 @@ $ docker-compose run --rm app yarn add -D prettier eslint-config-prettier
 +   "semi": false
 + }
 ```
+
+## ESLint
+
+```
+$ docker-compose run --rm app yarn add -D eslint-plugin-sort-keys-custom-order eslint-plugin-simple-import-sort
+```
+
+```diff
+# .eslintrc.json
+{
++  "plugins": ["sort-keys-custom-order", "simple-import-sort"],
++  "extends": ["next/core-web-vitals", "prettier"],
++  "rules": {
++    // For JS objects sorting
++    "sort-keys-custom-order/object-keys": ["error", { "orderedKeys": ["id", "name", "title"] }],
++    // For TS types sorting
++    "sort-keys-custom-order/type-keys": ["error", { "orderedKeys": ["id", "name", "title"] }],
++    "simple-import-sort/imports": "error",
++    "simple-import-sort/exports": "error"
++  }
+}
+
+# .vscode/settings.json
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
++  "editor.codeActionsOnSave": ["source.fixAll.eslint"]
+}
+
+```
