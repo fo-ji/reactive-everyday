@@ -75,3 +75,33 @@ $ gh repo create --source $(git rev-parse --show-toplevel) --public
 $ gh repo view --web
 $ git push -u origin main
 ```
+
+## Prettier
+
+```
+$ docker-compose run --rm app yarn add -D prettier eslint-config-prettier
+```
+
+```diff
+# .eslintrc.json
+{
+-  "extends": "next/core-web-vitals"
++  "extends": ["next/core-web-vitals", "prettier"]
+}
+
+# .vscode/settings.json
++ {
++    "editor.formatOnSave": true,
++    "editor.defaultFormatter": "esbenp.prettier-vscode"
++ }
+
+# .prettierrc
++ {
++   "printWidth": 100,
++   "tabWidth": 2,
++   "singleQuote": true,
++   "jsxSingleQuote": true,
++   "trailingComma": "none",
++   "semi": false
++ }
+```
