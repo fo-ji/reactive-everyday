@@ -66,3 +66,12 @@ $ docker-compose run --rm app yarn create next-app reactive-everyday --ts\
 }
 
 ```
+
+## Git
+
+```
+$ git init && git add . && git status && git commit -m "initial commit"
+$ gh repo create --source $(git rev-parse --show-toplevel) --public
+$ gh repo view --web
+$ git push -u origin main
+```
