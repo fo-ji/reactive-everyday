@@ -11,9 +11,9 @@ export const formatText = (richTexts: RichText[]) => {
 }
 
 export const formatCover = (cover: Page['cover']) => {
-  if (!cover) return '/no_image.png'
-  if (cover.file) return cover.file.url
-  if (cover.external) return cover.external.url
+  if (cover && cover.file) return cover.file.url
+  if (cover && cover.external) return cover.external.url
+  return '/no_image.png'
 }
 
 export const formatDate = (date: { start: string }) => {

@@ -61,7 +61,7 @@ export const Layout: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <div className='min-h-screen bg-background p-12'>
       <Header />
-      <main>{children}</main>
+      <main className='py-8'>{children}</main>
     </div>
   )
 }
