@@ -1,5 +1,6 @@
 import { GetStaticProps, NextPage } from 'next'
 
+import { Card } from '@/components/Elements/Card'
 import { getPages } from '@/features/articles/api'
 import { Page } from '@/features/articles/types'
 
@@ -20,7 +21,11 @@ interface ArticlesListProps {
 const ArticlesList: NextPage<ArticlesListProps> = ({ pages }) => {
   console.log({ pages })
 
-  return <h1>ArticlesList</h1>
+  return (
+    <>
+      <Card />
+    </>
+  )
 }
 
 export default ArticlesList
