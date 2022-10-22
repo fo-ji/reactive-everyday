@@ -1,7 +1,8 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import type { PropsWithChildren } from 'react'
+
+import { Link } from '../Elements/Link'
 
 const Navigation: React.FC = () => {
   const router = useRouter()
@@ -18,16 +19,15 @@ const Navigation: React.FC = () => {
       <ul className='-mb-px flex justify-around'>
         {routes.map((route, idx) => (
           <li key={idx}>
-            <Link href={route.path}>
-              <a
-                className={
-                  router.pathname.startsWith(route.path)
-                    ? 'inline-block border-b-4 border-link p-4 text-link'
-                    : 'inline-block p-4'
-                }
-              >
-                {route.name}
-              </a>
+            <Link
+              href={route.path}
+              className={
+                router.pathname.startsWith(route.path)
+                  ? 'pointer-events-none inline-block cursor-none border-b-4 border-link p-4 text-link'
+                  : 'inline-block p-4 hover:opacity-40'
+              }
+            >
+              {route.name}
             </Link>
           </li>
         ))}
@@ -39,9 +39,7 @@ const Navigation: React.FC = () => {
 const Logo: React.FC = () => {
   return (
     <Link href='/articles'>
-      <a>
-        <Image src='/logo.png' width={320} height={64} alt='logo' />
-      </a>
+      <Image src='/logo.png' width={320} height={64} alt='logo' />
     </Link>
   )
 }
