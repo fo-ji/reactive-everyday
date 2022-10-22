@@ -4,6 +4,12 @@ export interface Page {
   properties: Property
 }
 
+export interface RichText {
+  annotations: Annotation
+  href: string | null
+  plain_text: string
+}
+
 interface Document {
   external?: { url: string }
   file?: { url: string }
@@ -16,12 +22,6 @@ interface Property {
   releasedAt: { date: { start: string } }
   slug: { rich_text: RichText[] }
   tags: { multi_select: [{ name: string }] }
-}
-
-interface RichText {
-  annotations: Annotation
-  href: string | null
-  plain_text: string
 }
 
 interface Annotation {
