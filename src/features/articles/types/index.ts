@@ -1,3 +1,6 @@
+import { BlockType } from 'notion-block-renderer'
+import { ParsedUrlQuery } from 'querystring'
+
 export interface Page {
   id: string
   cover: Document | null
@@ -8,6 +11,11 @@ export interface RichText {
   annotations: Annotation
   href: string | null
   plain_text: string
+}
+
+export interface Params extends ParsedUrlQuery {
+  slug: string
+  tag: string
 }
 
 interface Document {
