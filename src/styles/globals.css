@@ -9,26 +9,113 @@ body {
 @layer components {
   h1 {
     color: theme(colors.main);
-    font-size: 56px;
+    font-size: 28px;
     font-weight: bold;
+    line-height: 28px;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+  h1 > span {
     background: linear-gradient(transparent 70%, theme(colors.underline.blue) 0%);
-    height: 64px;
-    line-height: 64px;
-    display: table;
   }
 
   h2 {
     color: theme(colors.main);
-    font-size: 40px;
+    font-size: 24px;
     font-weight: 500;
-    background: linear-gradient(transparent 65%, theme(colors.underline.orange) 0%);
-    height: 48px;
-    line-height: 48px;
-    display: table;
+    line-height: 24px;
+    letter-spacing: 1px;
+  }
+
+  h2 > span {
+    background: linear-gradient(transparent 70%, theme(colors.underline.orange) 0%);
   }
 
   p {
     color: theme(colors.paragraph);
-    font-size: 32px;
+    font-size: 16px;
+    letter-spacing: 1px;
   }
+}
+
+.nbr-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.nbr-inline-code {
+  @apply text-pink-500 text-sm px-2 py-1 font-normal bg-gray-100 rounded break-words;
+}
+
+.nbr-caption {
+  @apply text-inherit opacity-70;
+}
+
+.nbr-link {
+  @apply text-link no-underline border-b border-solid border-link hover:opacity-70;
+}
+
+.nbr-block-quote {
+  @apply border-l-4 border-solid border-gray-700 px-4 py-2;
+}
+
+.nbr-block-code {
+  @apply text-sm;
+}
+
+/* Hide only scrollbar */
+.nbr-block-code pre::-webkit-scrollbar {
+  @apply hidden !important;
+}
+
+.nbr-block-code .syntax-highlighter-pre {
+  @apply rounded-lg;
+  @apply p-5 !important;
+}
+
+.nbr-block-callout {
+  @apply bg-gray-100 pr-6 py-5 pl-4 rounded flex;
+}
+
+.nbr-block-callout .nbr-icon {
+  @apply min-w-min w-4 relative top-0.5;
+}
+
+.nbr-block-callout .nbr-callout {
+  @apply overflow-hidden w-full;
+  -webkit-margin-start: 8px;
+  margin-inline-start: 8px;
+}
+
+.nbr-block-ul {
+  @apply pl-4 list-disc;
+  color: theme(colors.paragraph);
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.nbr-block-ol {
+  @apply pl-4 list-decimal;
+  color: theme(colors.paragraph);
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+/* Add margin-bottom for each block */
+.nbr-blocks > div {
+  @apply mb-4;
+}
+
+.nbr-block-table_of_contents {
+  @apply p-5 list-disc bg-gray-100 rounded;
+}
+
+.nbr-block-table_of_contents > div {
+  @apply my-1;
+}
+
+.nbr-block-table_of_contents a {
+  @apply underline text-gray-600;
 }

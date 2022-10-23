@@ -2,6 +2,7 @@ import { GetStaticProps, NextPage } from 'next'
 
 import { Card } from '@/components/Elements/Card'
 import { Link } from '@/components/Elements/Link'
+import { ContentLayout } from '@/components/Layout'
 import { getPages } from '@/features/articles/api'
 import { Page } from '@/features/articles/types'
 import { formatCover, formatDate, formatMultiSelect, formatText } from '@/utils'
@@ -21,12 +22,10 @@ interface ArticlesListProps {
 }
 
 const ArticlesList: NextPage<ArticlesListProps> = ({ pages }) => {
-  console.log({ pages })
-
   return (
-    <div>
+    <ContentLayout>
       {pages.map(({ cover, properties }, idx) => (
-        <Link href='/' key={idx}>
+        <Link href={`/articles/${formatText(properties.slug.rich_text)}`} key={idx}>
           <Card
             title={formatText(properties.name.title)}
             cover={formatCover(cover)}
@@ -35,7 +34,7 @@ const ArticlesList: NextPage<ArticlesListProps> = ({ pages }) => {
           />
         </Link>
       ))}
-    </div>
+    </ContentLayout>
   )
 }
 
