@@ -15,16 +15,16 @@ const Navigation: React.FC = () => {
   ]
 
   return (
-    <div className='mt-6 border-b border-placeholder text-4xl'>
-      <ul className='-mb-px flex justify-around'>
+    <div className='mt-4'>
+      <ul className='m-auto -mb-px flex max-w-4xl justify-between border-b border-placeholder text-3xl tracking-wide'>
         {routes.map((route, idx) => (
           <li key={idx}>
             <Link
               href={route.path}
               className={
                 router.pathname.startsWith(route.path)
-                  ? 'pointer-events-none inline-block cursor-none border-b-4 border-link p-4 text-link'
-                  : 'inline-block p-4 hover:opacity-40'
+                  ? 'pointer-events-none inline-block cursor-none border-b-4 border-link p-1 text-link'
+                  : 'inline-block p-1 hover:opacity-40'
               }
             >
               {route.name}
@@ -39,7 +39,7 @@ const Navigation: React.FC = () => {
 const Logo: React.FC = () => {
   return (
     <Link href='/articles'>
-      <Image src='/logo.png' width={320} height={64} alt='logo' />
+      <Image src='/logo.png' width={240} height={40} alt='logo' />
     </Link>
   )
 }
@@ -55,9 +55,9 @@ const Header: React.FC = () => {
   )
 }
 
-export const Layout: React.FC<PropsWithChildren> = ({ children }) => {
+export const MainLayout: React.FC<PropsWithChildren> = ({ children }) => {
   return (
-    <div className='min-h-screen bg-background p-12'>
+    <div className='min-h-screen bg-background p-8'>
       <Header />
       <main className='py-8'>{children}</main>
     </div>
