@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+import { useRouter } from 'next/router'
 import { BlockType } from 'notion-block-renderer'
 
 import { ContentLayout } from '@/components/Layout'
@@ -46,8 +47,6 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ title, date }) => {
   return (
     <div className='flex flex-col justify-between gap-8'>
-      {/* TODO: 一覧へ戻る機能の実装 */}
-      <div className='text-link'>← back</div>
       <h1>
         <span>{title}</span>
       </h1>
@@ -65,6 +64,7 @@ interface ArticleProps {
 }
 
 const Article: NextPage<ArticleProps> = ({ blocks, page }) => {
+  const router = useRouter()
   console.log({ blocks, page })
 
   return (
@@ -78,6 +78,15 @@ const Article: NextPage<ArticleProps> = ({ blocks, page }) => {
           <Blocks blocks={blocks} />
         </div>
       </article>
+      <div className='mt-5 text-center'>
+        <button
+          className='inline-block text-link hover:opacity-60'
+          type='button'
+          onClick={() => router.back()}
+        >
+          ← Back
+        </button>
+      </div>
     </ContentLayout>
   )
 }

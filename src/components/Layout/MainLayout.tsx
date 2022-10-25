@@ -23,7 +23,7 @@ const Navigation: React.FC = () => {
               href={route.path}
               className={
                 router.pathname.startsWith(route.path)
-                  ? 'pointer-events-none inline-block cursor-none border-b-4 border-link p-1 text-link'
+                  ? 'inline-block border-b-4 border-link p-1 text-link hover:opacity-60'
                   : 'inline-block p-1 hover:opacity-40'
               }
             >
