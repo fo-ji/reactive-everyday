@@ -50,7 +50,13 @@ body {
 }
 
 .nbr-caption {
-  @apply text-inherit opacity-70;
+  @apply text-right opacity-70;
+}
+
+.nbr-caption > span {
+  color: theme(colors.paragraph);
+  font-size: 16px;
+  letter-spacing: 0.5px;
 }
 
 .nbr-link {
@@ -106,6 +112,10 @@ body {
 /* Add margin-bottom for each block */
 .nbr-blocks > div {
   @apply mb-4;
+}
+
+.nbr-image > img {
+  border-radius: 0.5rem;
 }
 
 .nbr-block-table_of_contents {
