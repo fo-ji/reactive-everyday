@@ -1,23 +1,15 @@
 import { Link } from '@/components/Elements/Link'
 import { Tag } from '@/components/Elements/Tag'
 
-const TAGS = [
-  'React.js',
-  'Next.js',
-  'Docker',
-  'JavaScript',
-  'TypeScript',
-  'AWS',
-  'GraphQL',
-  'MongoDB',
-  'Firebase'
-]
+interface TagsProps {
+  tags: string[]
+}
 
-export const Tags: React.FC = () => {
+export const Tags: React.FC<TagsProps> = ({ tags }) => {
   return (
     <div className='flex flex-wrap justify-between gap-5 rounded-xl bg-white p-6'>
-      {TAGS.map((tag, idx) => (
-        <Link href='/tags' key={idx}>
+      {tags.map((tag, idx) => (
+        <Link href={`/tags/${tag}`} key={idx}>
           <Tag className='text-lg font-normal tracking-wide text-link'>{tag}</Tag>
         </Link>
       ))}
