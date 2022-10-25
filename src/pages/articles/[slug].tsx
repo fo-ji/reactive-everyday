@@ -5,7 +5,7 @@ import { ContentLayout } from '@/components/Layout'
 import { getBlocks, getPages } from '@/features/articles/api'
 import { Blocks } from '@/features/articles/components'
 import { Page, Params } from '@/features/articles/types'
-import { formatDate, formatText } from '@/utils/format'
+import { formatDate, formatDiffDate, formatText } from '@/utils/format'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { results } = await getPages({})
@@ -53,8 +53,7 @@ const Header: React.FC<HeaderProps> = ({ title, date }) => {
       </h1>
       <div className='flex justify-end gap-16 text-base font-normal tracking-normal text-placeholder'>
         <div>{date}</div>
-        {/* TODO: dateから計算して出力 */}
-        <div>(仮)today</div>
+        <div>{formatDiffDate(date)}</div>
       </div>
     </div>
   )

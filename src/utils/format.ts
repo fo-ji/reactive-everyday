@@ -33,3 +33,21 @@ export const formatMultiSelect = (multiSelects: { name: string }[]) => {
     return []
   }
 }
+
+export const formatDiffDate = (date: string) => {
+  const diff = new Date().getTime() - new Date(date).getTime()
+  const progress = new Date(diff)
+
+  if (progress.getUTCFullYear() - 1970) {
+    if (progress.getUTCFullYear() - 1970 === 1) return 'a year ago'
+    return `${progress.getUTCFullYear() - 1970} years ago`
+  } else if (progress.getUTCMonth()) {
+    if (progress.getUTCMonth() === 1) return 'a month ago'
+    return `${progress.getUTCMonth()} months ago`
+  } else if (progress.getUTCDate() - 1) {
+    if (progress.getUTCDate() - 1 === 1) return 'a day ago'
+    return `${progress.getUTCDate() - 1} days ago`
+  } else {
+    return 'today'
+  }
+}
