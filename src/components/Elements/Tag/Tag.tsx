@@ -1,9 +1,16 @@
 import type { PropsWithChildren } from 'react'
 
-export const Tag: React.FC<PropsWithChildren> = ({ children }) => {
+interface TagProps extends PropsWithChildren {
+  className?: string
+}
+
+export const Tag: React.FC<TagProps> = ({
+  children,
+  className = 'text-lg font-normal tracking-wide text-placeholder'
+}) => {
   return (
-    <div className='text-lg font-normal text-placeholder'>
-      <span>#</span>
+    <div className={className}>
+      <span className='mr-1'>#</span>
       <span>{children}</span>
     </div>
   )
