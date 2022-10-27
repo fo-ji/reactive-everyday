@@ -51,3 +51,13 @@ export const formatDiffDate = (date: string) => {
     return 'today'
   }
 }
+
+export const formatTags = (results: Record<string, any>[]) => {
+  const tags: Set<string> = new Set()
+  for (const page of results) {
+    for (const tag of formatMultiSelect(page.properties.tags.multi_select)) {
+      tags.add(tag)
+    }
+  }
+  return [...tags]
+}
