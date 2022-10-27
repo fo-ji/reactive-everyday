@@ -28,6 +28,13 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   const { slug } = ctx.params as Params
   const { results } = await getPages({ slug })
   const page = results[0]
+
+  if (!page) {
+    return {
+      notFound: true
+    }
+  }
+
   const { results: blocks } = await getBlocks(page.id)
 
   return {
