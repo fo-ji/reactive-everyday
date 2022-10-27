@@ -55,11 +55,22 @@ const Header: React.FC = () => {
   )
 }
 
+const Footer: React.FC = () => {
+  return (
+    <footer>
+      <div className='text-center'>
+        <span>© reactな日常</span>
+      </div>
+    </footer>
+  )
+}
+
 export const MainLayout: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <div className='min-h-screen bg-background p-8'>
       <Header />
-      <main className='py-8'>{children}</main>
+      <main className='min-h-[calc(100vh_-_200px)] py-8'>{children}</main>
+      <Footer />
     </div>
   )
 }
