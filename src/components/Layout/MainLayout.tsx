@@ -16,7 +16,7 @@ const Navigation: React.FC = () => {
 
   return (
     <div className='mt-4'>
-      <ul className='m-auto -mb-px flex max-w-4xl justify-between border-b border-placeholder text-3xl tracking-wide'>
+      <ul className='m-auto -mb-px flex max-w-4xl justify-between border-b border-placeholder text-lg tracking-wide sm:text-3xl'>
         {routes.map((route, idx) => (
           <li key={idx}>
             <Link

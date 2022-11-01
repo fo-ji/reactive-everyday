@@ -6,7 +6,7 @@ interface TagProps extends PropsWithChildren {
 
 export const Tag: React.FC<TagProps> = ({
   children,
-  className = 'text-lg font-normal tracking-wide text-placeholder'
+  className = 'text-sm sm:text-lg font-normal tracking-wide text-placeholder'
 }) => (
   <div className={className}>
     <span className='mr-1'>#</span>
