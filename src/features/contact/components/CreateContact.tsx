@@ -1,6 +1,7 @@
 import * as z from 'zod'
 
 import { Form, InputField, TextAreaField } from '@/components/Form'
+import { useNotificationStore } from '@/stores/notifications'
 
 interface CreateContactDTO {
   data: { name: string; title: string; email: string; message: string }
@@ -25,10 +26,21 @@ const schema = z.object({
 })
 
 export const CreateContact: React.FC = () => {
+  const { addNotification } = useNotificationStore()
+
   return (
     <Form<CreateContactDTO['data'], typeof schema>
       onSubmit={(values) => {
         console.log({ values })
+        addNotification({
+          title: '送信が失敗しました',
+          message: '恐れ入りますが、時間をおいて再度お試しください。',
+          type: 'error'
+        })
+        addNotification({
+          title: '送信しました',
+          type: 'success'
+        })
       }}
       schema={schema}
     >
