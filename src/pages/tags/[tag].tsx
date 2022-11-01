@@ -47,27 +47,25 @@ interface TagListProps {
   tags: string[]
 }
 
-const TagList: NextPage<TagListProps> = ({ pages, tag, tags }) => {
-  return (
-    <ContentLayout>
-      <div className='flex flex-col gap-8'>
-        <Tags tags={tags} />
-        <CurrentTag tag={tag} />
-        <div>
-          {pages.map(({ cover, properties }, idx) => (
-            <Link href={`/articles/${formatText(properties.slug.rich_text)}`} key={idx}>
-              <Card
-                title={formatText(properties.name.title)}
-                cover={formatCover(cover)}
-                date={formatDate(properties.releasedAt.date)}
-                tags={formatMultiSelect(properties.tags.multi_select)}
-              />
-            </Link>
-          ))}
-        </div>
+const TagList: NextPage<TagListProps> = ({ pages, tag, tags }) => (
+  <ContentLayout>
+    <div className='flex flex-col gap-8'>
+      <Tags tags={tags} />
+      <CurrentTag tag={tag} />
+      <div>
+        {pages.map(({ cover, properties }, idx) => (
+          <Link href={`/articles/${formatText(properties.slug.rich_text)}`} key={idx}>
+            <Card
+              title={formatText(properties.name.title)}
+              cover={formatCover(cover)}
+              date={formatDate(properties.releasedAt.date)}
+              tags={formatMultiSelect(properties.tags.multi_select)}
+            />
+          </Link>
+        ))}
       </div>
-    </ContentLayout>
-  )
-}
+    </div>
+  </ContentLayout>
+)
 
 export default TagList

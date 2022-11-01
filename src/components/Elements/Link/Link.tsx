@@ -11,12 +11,10 @@ export const Link: React.FC<LinkProps> = ({
   className = 'hover:opacity-40',
   target = '_self',
   ...props
-}) => {
-  return (
-    <NextLink {...props}>
-      <a className={className} target={target} rel='noopener noreferrer'>
-        {children}
-      </a>
-    </NextLink>
-  )
-}
+}) => (
+  <NextLink {...props}>
+    <a className={className} target={target} rel='noopener noreferrer'>
+      {children}
+    </a>
+  </NextLink>
+)

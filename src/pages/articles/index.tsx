@@ -21,21 +21,19 @@ interface ArticlesListProps {
   pages: Page[]
 }
 
-const ArticlesList: NextPage<ArticlesListProps> = ({ pages }) => {
-  return (
-    <ContentLayout>
-      {pages.map(({ cover, properties }, idx) => (
-        <Link href={`/articles/${formatText(properties.slug.rich_text)}`} key={idx}>
-          <Card
-            title={formatText(properties.name.title)}
-            cover={formatCover(cover)}
-            date={formatDate(properties.releasedAt.date)}
-            tags={formatMultiSelect(properties.tags.multi_select)}
-          />
-        </Link>
-      ))}
-    </ContentLayout>
-  )
-}
+const ArticlesList: NextPage<ArticlesListProps> = ({ pages }) => (
+  <ContentLayout>
+    {pages.map(({ cover, properties }, idx) => (
+      <Link href={`/articles/${formatText(properties.slug.rich_text)}`} key={idx}>
+        <Card
+          title={formatText(properties.name.title)}
+          cover={formatCover(cover)}
+          date={formatDate(properties.releasedAt.date)}
+          tags={formatMultiSelect(properties.tags.multi_select)}
+        />
+      </Link>
+    ))}
+  </ContentLayout>
+)
 
 export default ArticlesList

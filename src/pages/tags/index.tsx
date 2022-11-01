@@ -21,12 +21,10 @@ interface TagsListProps {
   tags: string[]
 }
 
-const TagsList: NextPage<TagsListProps> = ({ tags }) => {
-  return (
-    <ContentLayout>
-      <Tags tags={tags} />
-    </ContentLayout>
-  )
-}
+const TagsList: NextPage<TagsListProps> = ({ tags }) => (
+  <ContentLayout>
+    <Tags tags={tags} />
+  </ContentLayout>
+)
 
 export default TagsList

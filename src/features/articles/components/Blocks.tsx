@@ -5,6 +5,6 @@ interface BlocksProps {
   blocks: BlockType[]
 }
 
-export const Blocks: React.FC<BlocksProps> = ({ blocks }) => {
-  return <NotionBlocks blocks={blocks} isCodeHighlighter syntaxHighlighterCSS={monokai} />
-}
+export const Blocks: React.FC<BlocksProps> = ({ blocks }) => (
+  <NotionBlocks blocks={blocks} isCodeHighlighter syntaxHighlighterCSS={monokai} />
+)

@@ -51,19 +51,17 @@ interface HeaderProps {
   date: string
 }
 
-const Header: React.FC<HeaderProps> = ({ title, date }) => {
-  return (
-    <div className='flex flex-col justify-between gap-8'>
-      <h1>
-        <span>{title}</span>
-      </h1>
-      <div className='flex justify-end gap-16 text-base font-normal tracking-normal text-placeholder'>
-        <div>{date}</div>
-        <div>{formatDiffDate(date)}</div>
-      </div>
+const Header: React.FC<HeaderProps> = ({ title, date }) => (
+  <div className='flex flex-col justify-between gap-8'>
+    <h1>
+      <span>{title}</span>
+    </h1>
+    <div className='flex justify-end gap-16 text-base font-normal tracking-normal text-placeholder'>
+      <div>{date}</div>
+      <div>{formatDiffDate(date)}</div>
     </div>
-  )
-}
+  </div>
+)
 
 interface ArticleProps {
   blocks: BlockType[]
@@ -72,7 +70,6 @@ interface ArticleProps {
 
 const Article: NextPage<ArticleProps> = ({ blocks, page }) => {
   const router = useRouter()
-  console.log({ blocks, page })
 
   return (
     <ContentLayout title={formatText(page.properties.name.title)}>

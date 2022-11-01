@@ -36,41 +36,33 @@ const Navigation: React.FC = () => {
   )
 }
 
-const Logo: React.FC = () => {
-  return (
-    <Link href='/articles'>
-      <Image src='/logo.png' width={240} height={40} alt='logo' />
-    </Link>
-  )
-}
+const Logo: React.FC = () => (
+  <Link href='/articles'>
+    <Image src='/logo.png' width={240} height={40} alt='logo' />
+  </Link>
+)
 
-const Header: React.FC = () => {
-  return (
-    <header>
-      <div className='text-center'>
-        <Logo />
-      </div>
-      <Navigation />
-    </header>
-  )
-}
-
-const Footer: React.FC = () => {
-  return (
-    <footer>
-      <div className='text-center'>
-        <span>© reactな日常</span>
-      </div>
-    </footer>
-  )
-}
-
-export const MainLayout: React.FC<PropsWithChildren> = ({ children }) => {
-  return (
-    <div className='min-h-screen bg-background p-8'>
-      <Header />
-      <main className='min-h-[calc(100vh_-_200px)] py-8'>{children}</main>
-      <Footer />
+const Header: React.FC = () => (
+  <header>
+    <div className='text-center'>
+      <Logo />
     </div>
-  )
-}
+    <Navigation />
+  </header>
+)
+
+const Footer: React.FC = () => (
+  <footer>
+    <div className='text-center'>
+      <span>© reactな日常</span>
+    </div>
+  </footer>
+)
+
+export const MainLayout: React.FC<PropsWithChildren> = ({ children }) => (
+  <div className='min-h-screen bg-background p-8'>
+    <Header />
+    <main className='min-h-[calc(100vh_-_200px)] py-8'>{children}</main>
+    <Footer />
+  </div>
+)
