@@ -2,6 +2,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import { useRouter } from 'next/router'
 import { BlockType } from 'notion-block-renderer'
 
+import { Button } from '@/components/Elements/Button'
 import { ContentLayout } from '@/components/Layout'
 import { getBlocks, getPages } from '@/features/articles/api'
 import { Blocks } from '@/features/articles/components'
@@ -83,13 +84,9 @@ const Article: NextPage<ArticleProps> = ({ blocks, page }) => {
         </div>
       </article>
       <div className='mt-5 text-center'>
-        <button
-          className='inline-block text-link hover:opacity-60'
-          type='button'
-          onClick={() => router.back()}
-        >
+        <Button className='inline-block text-link hover:opacity-60' onClick={() => router.back()}>
           ← Back
-        </button>
+        </Button>
       </div>
     </ContentLayout>
   )

@@ -1,5 +1,6 @@
 import * as z from 'zod'
 
+import { Button } from '@/components/Elements/Button'
 import { Form, InputField, TextAreaField } from '@/components/Form'
 import { useNotificationStore } from '@/stores/notifications'
 
@@ -70,12 +71,9 @@ export const CreateContact: React.FC = () => {
             registration={register('message')}
             placeholder='〇〇の記事の中で・・・'
           />
-          <button
-            className='rounded bg-main py-2 px-4 font-bold text-white hover:opacity-75'
-            type='submit'
-          >
-            Submit
-          </button>
+          <div className='text-center'>
+            <Button type='submit'>Submit</Button>
+          </div>
         </>
       )}
     </Form>

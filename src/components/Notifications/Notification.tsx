@@ -8,6 +8,8 @@ import {
 import { XIcon } from '@heroicons/react/solid'
 import { Fragment } from 'react'
 
+import { Button } from '../Elements/Button'
+
 const icons = {
   error: <XCircleIcon className='h-6 w-6 text-red-500' />,
   info: <InformationCircleIcon className='h-6 w-6 text-blue-500' />,
@@ -49,14 +51,14 @@ export const Notification = ({
               <p className='mt-1 text-sm text-placeholder'>{message}</p>
             </div>
             <div className='ml-4 flex shrink-0'>
-              <button
-                className='inline-flex rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
+              <Button
                 onClick={() => {
                   onDismiss(id)
                 }}
+                className='inline-flex rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
               >
                 <XIcon className='h-5 w-5' />
-              </button>
+              </Button>
             </div>
           </div>
         </div>
