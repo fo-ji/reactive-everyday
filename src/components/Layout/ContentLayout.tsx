@@ -15,6 +15,7 @@ export const ContentLayout: React.FC<ContentLayoutProps> = ({
     <Head>
       <title>{title}</title>
       <meta name='description' content={description} />
+      <link rel='icon' href='/favicon.png' />
     </Head>
     {children}
   </div>
