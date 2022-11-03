@@ -72,7 +72,9 @@ export const CreateContact: React.FC = () => {
             placeholder='〇〇の記事の中で・・・'
           />
           <div className='text-center'>
-            <Button type='submit'>Submit</Button>
+            <Button disabled type='submit'>
+              Submit
+            </Button>
           </div>
         </>
       )}
