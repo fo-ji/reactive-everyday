@@ -6,43 +6,28 @@ body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-@layer components {
-  h1 {
-    color: theme(colors.main);
-    font-size: 28px;
-    font-weight: bold;
-    line-height: 28px;
-    letter-spacing: 1px;
-    text-align: center;
-  }
+h1 {
+  @apply text-xl sm:text-3xl text-center text-main font-bold leading-7 tracking-wide;
+}
 
-  h1 > span {
-    background: linear-gradient(transparent 70%, theme(colors.underline.blue) 0%);
-  }
+h1 > span {
+  background: linear-gradient(transparent 70%, theme(colors.underline.blue) 0%);
+}
 
-  h2 {
-    color: theme(colors.main);
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 24px;
-    letter-spacing: 1px;
-  }
+h2 {
+  @apply text-lg sm:text-2xl text-main font-semibold leading-6 tracking-wide;
+}
 
-  h2 > span {
-    background: linear-gradient(transparent 70%, theme(colors.underline.orange) 0%);
-  }
+h2 > span {
+  background: linear-gradient(transparent 70%, theme(colors.underline.orange) 0%);
+}
 
-  p {
-    color: theme(colors.paragraph);
-    font-size: 16px;
-    letter-spacing: 1px;
-  }
+p {
+  @apply text-paragraph tracking-wide text-sm sm:text-base;
 }
 
 .nbr-blocks {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  @apply flex flex-col gap-5;
 }
 
 .nbr-inline-code {
@@ -54,9 +39,7 @@ body {
 }
 
 .nbr-caption > span {
-  color: theme(colors.paragraph);
-  font-size: 16px;
-  letter-spacing: 0.5px;
+  @apply text-paragraph text-base tracking-wide;
 }
 
 .nbr-link {
@@ -71,7 +54,6 @@ body {
   @apply text-sm;
 }
 
-/* Hide only scrollbar */
 .nbr-block-code pre::-webkit-scrollbar {
   @apply hidden !important;
 }
@@ -96,26 +78,19 @@ body {
 }
 
 .nbr-block-ul {
-  @apply pl-4 list-disc;
-  color: theme(colors.paragraph);
-  font-size: 16px;
-  letter-spacing: 1px;
+  @apply pl-4 list-disc text-paragraph tracking-wide text-sm sm:text-base;
 }
 
 .nbr-block-ol {
-  @apply pl-4 list-decimal;
-  color: theme(colors.paragraph);
-  font-size: 16px;
-  letter-spacing: 1px;
+  @apply pl-4 list-decimal text-paragraph tracking-wide text-sm sm:text-base;
 }
 
-/* Add margin-bottom for each block */
 .nbr-blocks > div {
   @apply mb-4;
 }
 
 .nbr-image > img {
-  border-radius: 0.5rem;
+  @apply rounded-lg;
 }
 
 .nbr-block-table_of_contents {
