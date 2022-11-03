@@ -54,7 +54,7 @@ const Header: React.FC = () => (
 const Footer: React.FC = () => (
   <footer>
     <div className='text-center'>
-      <span>© reactな日常</span>
+      <span>© 2022 フォージテック</span>
     </div>
   </footer>
 )
