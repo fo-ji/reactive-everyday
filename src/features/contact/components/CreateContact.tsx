@@ -2,11 +2,9 @@ import * as z from 'zod'
 
 import { Button } from '@/components/Elements/Button'
 import { Form, InputField, TextAreaField } from '@/components/Form'
-import { useNotificationStore } from '@/stores/notifications'
 
-interface CreateContactDTO {
-  data: { name: string; title: string; email: string; message: string }
-}
+import type { CreateContactDTO } from '../api/createContact'
+import { useCreateContact } from '../api/createContact'
 
 const schema = z.object({
   name: z
@@ -27,20 +25,13 @@ const schema = z.object({
 })
 
 export const CreateContact: React.FC = () => {
-  const { addNotification } = useNotificationStore()
+  const { createContact } = useCreateContact()
 
   return (
     <Form<CreateContactDTO['data'], typeof schema>
-      onSubmit={(values) => {
-        console.log({ values })
-        addNotification({
-          title: '送信が失敗しました',
-          message: '恐れ入りますが、時間をおいて再度お試しください。',
-          type: 'error'
-        })
-        addNotification({
-          title: '送信しました',
-          type: 'success'
+      onSubmit={async (values) => {
+        await createContact({
+          data: values
         })
       }}
       schema={schema}
@@ -63,7 +54,7 @@ export const CreateContact: React.FC = () => {
             label='Title'
             error={formState.errors['title']}
             registration={register('title')}
-            placeholder='taro@example.com'
+            placeholder='〇〇月〇〇日の記事について'
           />
           <TextAreaField
             label='Message'
@@ -72,9 +63,7 @@ export const CreateContact: React.FC = () => {
             placeholder='〇〇の記事の中で・・・'
           />
           <div className='text-center'>
-            <Button disabled type='submit'>
-              Submit
-            </Button>
+            <Button type='submit'>Submit</Button>
           </div>
         </>
       )}
