@@ -22,6 +22,14 @@ h2 > span {
   background: linear-gradient(transparent 70%, theme(colors.underline.orange) 0%);
 }
 
+h3 {
+  @apply text-base sm:text-xl text-main font-medium leading-5 tracking-wide;
+}
+
+h3 > span {
+  background: linear-gradient(transparent 70%, theme(colors.underline.yellow) 0%);
+}
+
 p {
   @apply text-paragraph tracking-wide text-sm sm:text-base;
 }
@@ -47,7 +55,7 @@ p {
 }
 
 .nbr-block-quote {
-  @apply border-l-4 border-solid border-gray-700 px-4 py-2;
+  @apply border-l-4 text-placeholder border-solid border-placeholder px-4 py-2;
 }
 
 .nbr-block-code {

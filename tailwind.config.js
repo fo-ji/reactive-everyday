@@ -17,7 +17,8 @@ module.exports = {
         placeholder: '#75757B',
         underline: {
           blue: '#5BA8CC',
-          orange: '#CC7454'
+          orange: '#CC7454',
+          yellow: '#CB9642'
         }
       }
     }
