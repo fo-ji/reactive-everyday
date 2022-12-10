@@ -1,19 +1,19 @@
-import { GetStaticProps, NextPage } from 'next'
+import type { GetServerSideProps, NextPage } from 'next'
 
 import { Card } from '@/components/Elements/Card'
 import { Link } from '@/components/Elements/Link'
 import { ContentLayout } from '@/components/Layout'
 import { getPages } from '@/features/articles/api'
-import { Page } from '@/features/articles/types'
+import type { Page } from '@/features/articles/types'
 import { formatCover, formatDate, formatMultiSelect, formatText } from '@/utils'
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const { results = [] } = await getPages({})
+
   return {
     props: {
       pages: results
-    },
-    revalidate: 10
+    }
   }
 }
 

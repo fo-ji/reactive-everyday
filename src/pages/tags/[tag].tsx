@@ -1,31 +1,14 @@
-import type { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+import type { GetServerSideProps, NextPage } from 'next'
 
 import { Card } from '@/components/Elements/Card'
 import { Link } from '@/components/Elements/Link'
 import { ContentLayout } from '@/components/Layout'
 import { getPages } from '@/features/articles/api'
-import { Page, Params } from '@/features/articles/types'
+import type { Page, Params } from '@/features/articles/types'
 import { CurrentTag, Tags } from '@/features/tags/components'
 import { formatCover, formatDate, formatMultiSelect, formatTags, formatText } from '@/utils'
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const { results }: { results: Record<string, any>[] } = await getPages({})
-  const tags = formatTags(results)
-  const paths = tags.map((tag) => {
-    return {
-      params: {
-        tag
-      }
-    }
-  })
-
-  return {
-    fallback: 'blocking',
-    paths
-  }
-}
-
-export const getStaticProps: GetStaticProps = async (ctx) => {
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const { tag } = ctx.params as Params
   const { results: tagPages = [] } = await getPages({ tag })
   const { results: allPages = [] }: { results: Record<string, any>[] } = await getPages({})
@@ -36,8 +19,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
       pages: tagPages,
       tag,
       tags
-    },
-    revalidate: 10
+    }
   }
 }
 
