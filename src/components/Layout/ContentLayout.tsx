@@ -9,7 +9,7 @@ interface ContentLayoutProps extends PropsWithChildren {
 export const ContentLayout: React.FC<ContentLayoutProps> = ({
   title = 'reactな日常',
   children,
-  description = ''
+  description = 'ReactやNextなどフロントエンドを中心に日々のキャッチアップを綴っています。バックエンドはNestJSにとても興味があって更新頻度高めになりそうです。サンプルなどで実装する環境は基本的にはDockerで構築しています。'
 }) => (
   <div className='m-auto max-w-4xl'>
     <Head>
