@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             function gtag(){window.dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', ${GA_ID});
+            gtag('config', ${JSON.stringify(GA_ID)});
         `}
       </Script>
       <Notifications />
