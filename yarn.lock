@@ -1871,10 +1871,10 @@ normalize-range@^0.1.2:
   resolved "https://registry.yarnpkg.com/normalize-range/-/normalize-range-0.1.2.tgz#2d10c06bdfd312ea9777695a4d28439456b75942"
   integrity sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==
 
-notion-block-renderer@^2.3.7:
-  version "2.3.7"
-  resolved "https://registry.yarnpkg.com/notion-block-renderer/-/notion-block-renderer-2.3.7.tgz#a84fcf0bd6a9f59c2bfffcfdf576746c537bda43"
-  integrity sha512-QelmLWVxUvs4wn7jEJkIonwCKrgfxIOQSTu1f+HbvzzICKjn9cxUgt/SnEEpnp4RsBN43lW9flN7Lp4OecVgFw==
+notion-block-renderer@^2.3.13:
+  version "2.3.13"
+  resolved "https://registry.yarnpkg.com/notion-block-renderer/-/notion-block-renderer-2.3.13.tgz#011c2689f4bf64d080a65a9f78687811ec08eeae"
+  integrity sha512-VXBhWY50hE0PoANZtuzi3wxFpT8IYEtLn/Z2kHe7tATbLnvVlgl5fI6j3qsLG0lbig0Au82vcy0xO/Vpq+YMUQ==
   dependencies:
     react-syntax-highlighter "^15.5.0"
 
