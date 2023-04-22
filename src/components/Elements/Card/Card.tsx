@@ -13,14 +13,16 @@ interface CardProps {
 export const Card: React.FC<CardProps> = ({ title, cover, date, tags }) => (
   <div className='border-b border-placeholder px-3 py-2 sm:min-h-[160px] sm:px-5 sm:py-4'>
     <div className='flex flex-col gap-4 sm:flex-row sm:gap-8'>
-      <div className='flex h-32 justify-center'>
-        <Image
-          className='object-contain'
-          src={cover}
-          width={128}
-          height={128}
-          alt='記事で扱うメイン技術のイメージ'
-        />
+      <div className='flex justify-center'>
+        <div className='relative h-32 w-32'>
+          <Image
+            className='object-contain'
+            fill
+            sizes='100%'
+            src={cover}
+            alt='記事で扱うメイン技術のイメージ'
+          />
+        </div>
       </div>
       <div className='flex flex-col justify-between gap-2 tracking-wide sm:w-[calc(100%_-_144px)] sm:gap-4'>
         <div className='flex justify-end gap-4 text-sm font-normal text-placeholder sm:gap-8 sm:text-lg'>
