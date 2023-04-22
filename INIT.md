@@ -141,7 +141,7 @@ $ docker-compose run --rm app yarn add -D eslint-plugin-sort-keys-custom-order e
 ```
 $ docker-compose run --rm app yarn add -D tailwindcss postcss autoprefixer
 $ docker-compose run --rm app yarn tailwindcss init -p
-$ docker-compose run --rm app yarn add -D eslint-plugin-tailwindcss @tailwindcss/typography @tailwindcss/forms @tailwindcss/line-clamp
+$ docker-compose run --rm app yarn add -D eslint-plugin-tailwindcss @tailwindcss/typography @tailwindcss/forms
 ```
 
 ```diff
@@ -153,7 +153,6 @@ module.exports = {
 +  plugins: [
 +      require("@tailwindcss/typography"),
 +      require("@tailwindcss/forms"),
-+      require("@tailwindcss/line-clamp")
 +  ],
   theme: {
     extend: {}
