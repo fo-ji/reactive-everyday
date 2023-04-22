@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid'
-import create from 'zustand'
+import { create } from 'zustand'
 
 interface Notification {
   id: string
