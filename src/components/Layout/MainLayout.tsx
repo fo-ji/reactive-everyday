@@ -38,7 +38,7 @@ const Navigation: React.FC = () => {
 
 const Logo: React.FC = () => (
   <Link href='/articles'>
-    <Image src='/logo.png' width={240} height={40} alt='logo' />
+    <Image src='/logo.png' width={240} height={40} alt='logo' className='h-auto w-auto' />
   </Link>
 )
 
