@@ -44,7 +44,7 @@ const Logo: React.FC = () => (
 
 const Header: React.FC = () => (
   <header>
-    <div className='text-center'>
+    <div className='flex justify-center'>
       <Logo />
     </div>
     <Navigation />

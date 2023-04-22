@@ -12,9 +12,7 @@ export const Link: React.FC<LinkProps> = ({
   target = '_self',
   ...props
 }) => (
-  <NextLink {...props}>
-    <a className={className} target={target} rel='noopener noreferrer'>
-      {children}
-    </a>
+  <NextLink className={className} target={target} rel='noopener noreferrer' {...props}>
+    {children}
   </NextLink>
 )
