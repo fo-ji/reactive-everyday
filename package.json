@@ -39,7 +39,7 @@
     "notion-block-renderer": "^2.3.13",
     "postcss": "^8.4.23",
     "prettier": "^2.8.8",
-    "tailwindcss": "^3.3.1",
+    "tailwindcss": "^3.3.2",
     "typescript": "5.0.4"
   }
 }
