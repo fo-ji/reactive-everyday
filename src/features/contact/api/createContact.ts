@@ -9,7 +9,7 @@ export const useCreateContact = () => {
 
   const createContact = async ({ data }: CreateContactDTO) => {
     try {
-      const res = await fetch('/api/sendMail', {
+      const res = await fetch('/api/mails/send', {
         body: JSON.stringify(data),
         headers: {
           Accept: 'application/json, text/plain, */*',

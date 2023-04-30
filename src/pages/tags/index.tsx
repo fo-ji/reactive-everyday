@@ -1,12 +1,12 @@
 import { GetStaticProps, NextPage } from 'next'
 
 import { ContentLayout } from '@/components/Layout'
-import { getPages } from '@/features/articles/api'
+import { getServerPages } from '@/features/articles/api'
 import { Tags } from '@/features/tags/components'
 import { formatTags } from '@/utils'
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { results }: { results: Record<string, any>[] } = await getPages({})
+  const { results }: { results: Record<string, any>[] } = await getServerPages({})
   const tags = formatTags(results)
 
   return {
