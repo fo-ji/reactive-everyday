@@ -3,15 +3,15 @@ import type { GetServerSideProps, NextPage } from 'next'
 import { Card } from '@/components/Elements/Card'
 import { Link } from '@/components/Elements/Link'
 import { ContentLayout } from '@/components/Layout'
-import { getPages } from '@/features/articles/api'
+import { getServerPages } from '@/features/articles/api'
 import type { Page, Params } from '@/features/articles/types'
 import { CurrentTag, Tags } from '@/features/tags/components'
 import { formatCover, formatDate, formatMultiSelect, formatTags, formatText } from '@/utils'
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const { tag } = ctx.params as Params
-  const { results: tagPages = [] } = await getPages({ tag })
-  const { results: allPages = [] }: { results: Record<string, any>[] } = await getPages({})
+  const { results: tagPages = [] } = await getServerPages({ tag })
+  const { results: allPages = [] }: { results: Record<string, any>[] } = await getServerPages({})
   const tags = formatTags(allPages)
 
   return {

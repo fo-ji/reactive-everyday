@@ -2,6 +2,7 @@ import '@/styles/globals.css'
 
 import type { AppProps } from 'next/app'
 import Script from 'next/script'
+import { SWRConfig } from 'swr'
 
 import { MainLayout } from '@/components/Layout'
 import { Notifications } from '@/components/Notifications/Notifications'
@@ -23,8 +24,15 @@ function MyApp({ Component, pageProps }: AppProps) {
             gtag('config', ${JSON.stringify(GA_ID)});
         `}
       </Script>
-      <Notifications />
-      <Component {...pageProps} />
+      <SWRConfig
+        value={{
+          keepPreviousData: true,
+          revalidateOnFocus: false
+        }}
+      >
+        <Notifications />
+        <Component {...pageProps} />
+      </SWRConfig>
     </MainLayout>
   )
 }

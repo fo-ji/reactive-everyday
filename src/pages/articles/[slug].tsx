@@ -4,13 +4,13 @@ import { BlockType } from 'notion-block-renderer'
 
 import { Button } from '@/components/Elements/Button'
 import { ContentLayout } from '@/components/Layout'
-import { getBlocks, getPages } from '@/features/articles/api'
+import { getBlocks, getServerPages } from '@/features/articles/api'
 import { Blocks } from '@/features/articles/components'
 import { Page, Params } from '@/features/articles/types'
 import { formatDate, formatDiffDate, formatText } from '@/utils/format'
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const { results } = await getPages({})
+  const { results } = await getServerPages({})
   const paths = results.map(({ properties }: any) => {
     return {
       params: {
@@ -27,7 +27,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const { slug } = ctx.params as Params
-  const { results } = await getPages({ slug })
+  const { results } = await getServerPages({ slug })
   const page = results[0]
 
   if (!page) {
@@ -85,7 +85,19 @@ const Article: NextPage<ArticleProps> = ({ blocks, page }) => {
       </article>
       <div className='mt-5 text-center'>
         <Button className='inline-block text-link hover:opacity-60' onClick={() => router.back()}>
-          ← Back
+          <div className='flex gap-2'>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              strokeWidth={1.5}
+              stroke='currentColor'
+              className='h-6 w-6'
+            >
+              <path strokeLinecap='round' strokeLinejoin='round' d='M15.75 19.5L8.25 12l7.5-7.5' />
+            </svg>
+            Back
+          </div>
         </Button>
       </div>
     </ContentLayout>
