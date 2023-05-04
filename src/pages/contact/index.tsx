@@ -6,7 +6,9 @@ import { CreateContact } from '@/features/contact/components'
 const Contact: NextPage = () => (
   <ContentLayout>
     <div className='text-center'>
-      <p>当ブログ、お仕事に関するお問い合わせは以下のフォームより承っております。</p>
+      <h1 className='text-sm font-normal tracking-wide text-paragraph sm:text-base'>
+        当ブログ、お仕事に関するお問い合わせは以下のフォームより承っております。
+      </h1>
     </div>
     <div className='p-5 sm:p-10'>
       <CreateContact />
