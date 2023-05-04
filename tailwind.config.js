@@ -10,7 +10,7 @@ module.exports = {
         link: '#1155CC',
         main: '#222336',
         paragraph: '#2A2A35',
-        placeholder: '#75757B',
+        placeholder: '#5B6472',
         underline: {
           blue: '#5BA8CC',
           orange: '#CC7454',

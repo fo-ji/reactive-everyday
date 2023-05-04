@@ -42,25 +42,25 @@ export const CreateContact: React.FC = () => {
             label='Name'
             error={formState.errors['name']}
             registration={register('name')}
-            placeholder='山田 太郎'
+            placeholder='例）山田 太郎'
           />
           <InputField
             label='Email'
             error={formState.errors['email']}
             registration={register('email')}
-            placeholder='taro@example.com'
+            placeholder='例）taro@example.com'
           />
           <InputField
             label='Title'
             error={formState.errors['title']}
             registration={register('title')}
-            placeholder='〇〇月〇〇日の記事について'
+            placeholder='例）〇〇月〇〇日の記事について'
           />
           <TextAreaField
             label='Message'
             error={formState.errors['message']}
             registration={register('message')}
-            placeholder='〇〇の記事の中で・・・'
+            placeholder='例）〇〇の記事の中で・・・'
           />
           <div className='text-center'>
             <Button type='submit'>Submit</Button>
