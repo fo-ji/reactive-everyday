@@ -21,6 +21,7 @@ export const Card: React.FC<CardProps> = ({ title, cover, date, tags }) => (
             sizes='100%'
             src={cover}
             alt='記事で扱うメイン技術のイメージ'
+            unoptimized
           />
         </div>
       </div>
