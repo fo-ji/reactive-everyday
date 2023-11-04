@@ -20,7 +20,7 @@
     "sharp": "^0.32.6",
     "swr": "^2.2.4",
     "zod": "^3.22.4",
-    "zustand": "4.4.5"
+    "zustand": "4.4.6"
   },
   "devDependencies": {
     "@axe-core/react": "^4.8.1",
