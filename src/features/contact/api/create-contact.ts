@@ -1,3 +1,5 @@
+'use client'
+
 import { useNotificationStore } from '@/stores/notifications'
 
 export interface CreateContactDTO {

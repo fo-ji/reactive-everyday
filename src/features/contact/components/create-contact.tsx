@@ -1,10 +1,12 @@
+'use client'
+
 import * as z from 'zod'
 
 import { Button } from '@/components/Elements/Button'
 import { Form, InputField, TextAreaField } from '@/components/Form'
 
-import type { CreateContactDTO } from '../api/createContact'
-import { useCreateContact } from '../api/createContact'
+import type { CreateContactDTO } from '../api/create-contact'
+import { useCreateContact } from '../api/create-contact'
 
 const schema = z.object({
   name: z

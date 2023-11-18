@@ -1,1 +1,1 @@
-export * from './CreateContact'
+export * from './create-contact'
