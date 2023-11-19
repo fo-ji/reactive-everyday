@@ -1,2 +1,2 @@
-export * from './getBlocks'
-export * from './getPages'
+export * from './get-blocks'
+export * from './get-pages'

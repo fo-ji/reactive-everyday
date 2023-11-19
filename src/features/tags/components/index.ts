@@ -1,2 +1,2 @@
-export * from './CurrentTag'
-export * from './Tags'
+export * from './current-tag'
+export * from './tags'
