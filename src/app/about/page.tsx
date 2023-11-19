@@ -1,4 +1,4 @@
-import { Link } from '@/components/Elements/Link'
+import { Link } from '@/components/elements/link'
 
 export default function AboutPage() {
   return (

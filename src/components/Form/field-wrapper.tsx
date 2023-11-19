@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react'
+import type { PropsWithChildren } from 'react'
 import type { FieldError } from 'react-hook-form'
 
 export interface FieldWrapperPassThroughProps {
@@ -8,7 +8,7 @@ export interface FieldWrapperPassThroughProps {
 
 interface FieldWrapperProps extends FieldWrapperPassThroughProps, PropsWithChildren {}
 
-export const FieldWrapper: React.FC<FieldWrapperProps> = ({ children, error, label }) => (
+export const FieldWrapper = ({ children, error, label }: FieldWrapperProps) => (
   <div>
     <label className='block'>
       <span className='text-placeholder'>{label}</span>

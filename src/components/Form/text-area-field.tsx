@@ -1,24 +1,17 @@
 import type { UseFormRegisterReturn } from 'react-hook-form'
 
-import { FieldWrapper, FieldWrapperPassThroughProps } from './FieldWrapper'
+import { FieldWrapper, FieldWrapperPassThroughProps } from './field-wrapper'
 
-interface InputFieldProps extends FieldWrapperPassThroughProps {
+interface TextAreaFieldProps extends FieldWrapperPassThroughProps {
   placeholder?: string
   registration: Partial<UseFormRegisterReturn>
-  type?: 'text' | 'email'
 }
 
-export const InputField: React.FC<InputFieldProps> = ({
-  error,
-  label,
-  placeholder,
-  registration,
-  type = 'text'
-}) => (
+export const TextAreaField = ({ error, label, placeholder, registration }: TextAreaFieldProps) => (
   <FieldWrapper label={label} error={error}>
-    <input
-      type={type}
+    <textarea
       className='mt-1 block w-full rounded-md border-gray-300 text-paragraph shadow-sm placeholder:text-placeholder placeholder:text-opacity-50'
+      rows={3}
       placeholder={placeholder}
       {...registration}
     />

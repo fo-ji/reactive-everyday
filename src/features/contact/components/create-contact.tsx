@@ -2,8 +2,8 @@
 
 import * as z from 'zod'
 
-import { Button } from '@/components/Elements/Button'
-import { Form, InputField, TextAreaField } from '@/components/Form'
+import { Button } from '@/components/elements/button'
+import { Form, InputField, TextAreaField } from '@/components/form'
 
 import type { CreateContactDTO } from '../api/create-contact'
 import { useCreateContact } from '../api/create-contact'

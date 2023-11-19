@@ -1,21 +1,19 @@
-import type { FC } from 'react'
+import type { UsePaginationReturn } from '@/hooks/use-pagination'
 
-import type { UsePaginationReturn } from '@/hooks/usePagination'
-
-import { Button } from '../Button'
+import { Button } from '../button'
 
 interface PaginationProps extends UsePaginationReturn {
   has_more?: boolean
   next_cursor?: string
 }
 
-export const Pagination: FC<PaginationProps> = ({
+export const Pagination = ({
   back,
   has_more,
   next,
   next_cursor,
   start_cursor
-}) => (
+}: PaginationProps) => (
   <div className='flex gap-10'>
     <div className='w-24 text-center'>
       {start_cursor && (

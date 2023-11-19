@@ -1,3 +1,5 @@
+'use client'
+
 import NotionBlocks, { BlockType } from 'notion-block-renderer'
 import { tomorrowNightEighties } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
 

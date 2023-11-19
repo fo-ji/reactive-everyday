@@ -3,7 +3,7 @@ import '@/styles/globals.css'
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 
-import { AppLayout } from '@/components/Layout/app-layout'
+import { AppLayout } from '@/components/layout'
 import { AppProvider } from '@/providers/app'
 
 export const metadata: Metadata = {

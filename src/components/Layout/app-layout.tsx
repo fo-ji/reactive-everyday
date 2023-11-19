@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import type { ReactNode } from 'react'
 
-import { Link } from '../Elements/Link'
+import { Link } from '../elements/link'
 
 const Navigation = () => {
   const pathname = usePathname()

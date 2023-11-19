@@ -108,17 +108,8 @@ export const getClientPages = async ({
   }
 }
 
-export const useGetArticles = ({
-  fallbackData,
-  slug,
-  start_cursor,
-  tag
-}: GetPagesProps & { fallbackData: GetPagesResponse }) => {
-  return useSWR(
-    ['/api/articles', slug, start_cursor, tag],
-    ([_, slug, start_cursor, tag]) => getClientPages({ slug, start_cursor, tag }),
-    {
-      fallbackData
-    }
+export const useGetArticles = ({ slug, start_cursor, tag }: GetPagesProps) => {
+  return useSWR(['/api/articles', slug, start_cursor, tag], ([_, slug, start_cursor, tag]) =>
+    getClientPages({ slug, start_cursor, tag })
   )
 }

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { Tag } from '@/components/Elements/Tag'
+import { Tag } from '@/components/elements/tag'
 import { formatDiffDate } from '@/utils/format'
 
 interface CardProps {
@@ -10,7 +10,7 @@ interface CardProps {
   tags: string[]
 }
 
-export const Card: React.FC<CardProps> = ({ title, cover, date, tags }) => (
+export const Card = ({ title, cover, date, tags }: CardProps) => (
   <div className='border-b border-placeholder px-3 py-2 sm:min-h-[160px] sm:px-5 sm:py-4'>
     <div className='flex flex-col gap-4 sm:flex-row sm:gap-8'>
       <div className='flex justify-center'>

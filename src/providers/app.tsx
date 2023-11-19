@@ -5,7 +5,7 @@ import React, { type ReactNode } from 'react'
 import ReactDOM from 'react-dom'
 import { SWRConfig } from 'swr'
 
-import { Notifications } from '@/components/Notifications'
+import { Notifications } from '@/components/notifications'
 import { GA_ID } from '@/config'
 
 type AppProviderProps = {

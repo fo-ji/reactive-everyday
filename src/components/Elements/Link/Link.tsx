@@ -6,12 +6,12 @@ interface LinkProps extends NextLinkProps, PropsWithChildren {
   target?: string
 }
 
-export const Link: React.FC<LinkProps> = ({
+export const Link = ({
   children,
   className = 'hover:opacity-40',
   target = '_self',
   ...props
-}) => (
+}: LinkProps) => (
   <NextLink className={className} target={target} rel='noopener noreferrer' {...props}>
     {children}
   </NextLink>

@@ -8,7 +8,7 @@ import {
 import { XMarkIcon } from '@heroicons/react/24/solid'
 import { Fragment } from 'react'
 
-import { Button } from '../Elements/Button'
+import { Button } from '../elements/button'
 
 const icons = {
   error: <XCircleIcon className='h-6 w-6 text-red-500' />,
@@ -42,7 +42,7 @@ export const Notification = ({
       leaveFrom='opacity-100'
       leaveTo='opacity-0'
     >
-      <div className='pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5'>
+      <div className='pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-black'>
         <div className='p-4' role='alert' aria-label={title}>
           <div className='flex items-start'>
             <div className='shrink-0'>{icons[type]}</div>
