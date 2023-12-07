@@ -12,10 +12,10 @@
   resolved "https://registry.yarnpkg.com/@alloc/quick-lru/-/quick-lru-5.2.0.tgz#7bf68b20c0a350f936915fcae06f58e32007ce30"
   integrity sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==
 
-"@axe-core/react@^4.8.1":
-  version "4.8.1"
-  resolved "https://registry.yarnpkg.com/@axe-core/react/-/react-4.8.1.tgz#d3823389a01bffe7b0d0d30c05e386b161789e86"
-  integrity sha512-55eSebGFYQaBRJsACCr+SxX9QV7buSmQUnUMH37y0k2CvlyPAuPLNcG6IcSaU+U6IhDJ5EWSHBIoM4HSVU3f3w==
+"@axe-core/react@^4.8.2":
+  version "4.8.2"
+  resolved "https://registry.yarnpkg.com/@axe-core/react/-/react-4.8.2.tgz#6369581607b51c6af0206d0d7b00dd3a8151d594"
+  integrity sha512-FwDtrUuKOyeorrpxhU9n1TK6Lh/LWeRuBk9Ym4JoH5cTISvifcqYfVV2fEc3vnUFABvsjBxfBGsfJdUiKTqE8w==
   dependencies:
     axe-core "~4.8.2"
     requestidlecallback "^0.3.0"
