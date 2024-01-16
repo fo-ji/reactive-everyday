@@ -12,12 +12,12 @@
   resolved "https://registry.yarnpkg.com/@alloc/quick-lru/-/quick-lru-5.2.0.tgz#7bf68b20c0a350f936915fcae06f58e32007ce30"
   integrity sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==
 
-"@axe-core/react@^4.8.2":
-  version "4.8.2"
-  resolved "https://registry.yarnpkg.com/@axe-core/react/-/react-4.8.2.tgz#6369581607b51c6af0206d0d7b00dd3a8151d594"
-  integrity sha512-FwDtrUuKOyeorrpxhU9n1TK6Lh/LWeRuBk9Ym4JoH5cTISvifcqYfVV2fEc3vnUFABvsjBxfBGsfJdUiKTqE8w==
+"@axe-core/react@^4.8.3":
+  version "4.8.3"
+  resolved "https://registry.yarnpkg.com/@axe-core/react/-/react-4.8.3.tgz#a5a8e0f79a805884e9b4711ef23d94858bad93ac"
+  integrity sha512-rHAg0HIDrwfSkYZelu8iUV9Cdafib0mnoDwqqdkXsULvmCDfjdeV2dlpyxkOjbKQ+6TPy05JUF+VMWe7wXa/zQ==
   dependencies:
-    axe-core "~4.8.2"
+    axe-core "~4.8.3"
     requestidlecallback "^0.3.0"
 
 "@babel/runtime@^7.23.2", "@babel/runtime@^7.3.1":
@@ -710,10 +710,10 @@ axe-core@=4.7.0:
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.7.0.tgz#34ba5a48a8b564f67e103f0aa5768d76e15bbbbf"
   integrity sha512-M0JtH+hlOL5pLQwHOLNYZaXuhqmvS8oExsqB1SBYgA4Dk7u/xx+YdGHXaK5pyUfed5mYXdlYiphWq3G8cRi5JQ==
 
-axe-core@~4.8.2:
-  version "4.8.2"
-  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.8.2.tgz#2f6f3cde40935825cf4465e3c1c9e77b240ff6ae"
-  integrity sha512-/dlp0fxyM3R8YW7MFzaHWXrf4zzbr0vaYb23VBFCl83R7nWNPg/yaQw2Dc8jzCMmDVLhSdzH8MjrsuIUuvX+6g==
+axe-core@~4.8.3:
+  version "4.8.3"
+  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.8.3.tgz#205df863dd9917d5979e9435dab4d47692759051"
+  integrity sha512-d5ZQHPSPkF9Tw+yfyDcRoUOc4g/8UloJJe5J8m4L5+c7AtDdjDLRxew/knnI4CxvtdxEUVgWz4x3OIQUIFiMfw==
 
 axios@^1.6.0:
   version "1.6.2"
