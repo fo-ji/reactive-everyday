@@ -7,6 +7,7 @@ import { notion } from '@/lib'
 import type { Page } from '../types'
 
 interface GetPagesProps {
+  page_size?: number
   slug?: string
   start_cursor?: string
   tag?: string
@@ -16,7 +17,12 @@ export interface GetPagesResponse extends Omit<QueryDatabaseResponse, 'results'>
   results: Page[]
 }
 
-export const getServerPages = async ({ slug, start_cursor, tag }: GetPagesProps) => {
+export const getServerPages = async ({
+  page_size = 10,
+  slug,
+  start_cursor,
+  tag
+}: GetPagesProps) => {
   const baseFilter = [
     {
       checkbox: {
@@ -59,7 +65,7 @@ export const getServerPages = async ({ slug, start_cursor, tag }: GetPagesProps)
     filter: {
       and: [...baseFilter, ...slugFilter, ...tagFilter]
     },
-    page_size: 10,
+    page_size,
     sorts: [
       {
         direction: 'descending',
