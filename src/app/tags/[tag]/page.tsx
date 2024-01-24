@@ -11,8 +11,10 @@ type TagListPageProps = {
 
 export default async function TagListPage({ params }: TagListPageProps) {
   const { tag } = params
-  const { results: pages = [] } = await getServerPages({ tag })
-  const { results: allPages = [] }: { results: Record<string, any>[] } = await getServerPages({})
+  const { results: pages = [] } = await getServerPages({ page_size: 100, tag })
+  const { results: allPages = [] }: { results: Record<string, any>[] } = await getServerPages({
+    page_size: 100
+  })
   const tags = formatTags(allPages)
 
   return (
@@ -20,6 +22,9 @@ export default async function TagListPage({ params }: TagListPageProps) {
       <div className='flex flex-col gap-8'>
         <Tags tags={tags} />
         <CurrentTag tag={tag} />
+        <div className='text-center'>
+          <p className='font-bold text-placeholder'>{pages.length}件</p>
+        </div>
         <div>
           {(pages as unknown as Page[]).map(({ cover, properties }, idx) => (
             <Link href={`/articles/${formatText(properties.slug.rich_text)}`} key={idx}>
