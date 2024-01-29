@@ -1,4 +1,3 @@
-import { BlockType } from 'notion-block-renderer'
 import { ParsedUrlQuery } from 'querystring'
 
 export interface Page {
@@ -14,7 +13,6 @@ export interface RichText {
 }
 
 export interface Params extends ParsedUrlQuery {
-  slug: string
   tag: string
 }
 
@@ -28,7 +26,6 @@ interface Property {
   createdBy: { rich_text: RichText[] }
   isReleased: { checkbox: boolean }
   releasedAt: { date: { start: string } }
-  slug: { rich_text: RichText[] }
   tags: { multi_select: [{ name: string }] }
 }
 
