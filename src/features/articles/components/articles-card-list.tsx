@@ -10,8 +10,8 @@ type ArticlesCardListProps = {
 export const ArticlesCardList = ({ pages }: ArticlesCardListProps) => {
   return (
     <>
-      {pages?.map(({ cover, properties }, idx) => (
-        <Link href={`/articles/${formatText(properties.slug.rich_text)}`} key={idx}>
+      {pages?.map(({ id, cover, properties }) => (
+        <Link href={`/articles/${id}`} key={id}>
           <Card
             title={formatText(properties.name.title)}
             cover={formatCover(cover)}

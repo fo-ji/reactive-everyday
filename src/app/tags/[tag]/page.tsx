@@ -26,8 +26,8 @@ export default async function TagListPage({ params }: TagListPageProps) {
           <p className='font-bold text-placeholder'>{pages.length}件</p>
         </div>
         <div>
-          {(pages as unknown as Page[]).map(({ cover, properties }, idx) => (
-            <Link href={`/articles/${formatText(properties.slug.rich_text)}`} key={idx}>
+          {(pages as unknown as Page[]).map(({ id, cover, properties }) => (
+            <Link href={`/articles/${id}`} key={id}>
               <Card
                 title={formatText(properties.name.title)}
                 cover={formatCover(cover)}

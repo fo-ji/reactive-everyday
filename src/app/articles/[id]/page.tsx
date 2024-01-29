@@ -1,31 +1,25 @@
 import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 
-import { getBlocks, getServerPages } from '@/features/articles/api'
+import { getBlocks, getPage } from '@/features/articles/api'
 import { Blocks, PageBackButton } from '@/features/articles/components'
-import type { Page } from '@/features/articles/types'
 import { formatDate, formatDiffDate, formatText } from '@/utils/format'
 
 type ArticlePageProps = {
-  params: { slug: string }
+  params: { id: string }
 }
 
-export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
-  const { results } = await getServerPages({ slug: params.slug })
-  const page = results[0] as unknown as Page
-  return { title: formatText(page.properties.name.title) }
+export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata | void> {
+  const page: any = await getPage({ pageId: params.id })
+  if (page) return { title: formatText(page.properties.name.title) }
 }
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
-  const { results } = await getServerPages({ slug: params.slug })
-  const page = results[0] as unknown as Page
+  const page: any = await getPage({ pageId: params.id })
 
-  if (!page) {
-    return {
-      notFound: true
-    }
-  }
+  if (!page) notFound()
 
-  const { results: blocks } = await getBlocks(page.id)
+  const { results: blocks } = await getBlocks(params.id)
 
   return (
     <section>
