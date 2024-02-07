@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-import { getServerPages } from '@/features/articles/api'
+import { getPagesServer } from '@/features/articles/api'
 
 export async function GET(req: NextRequest) {
   const searchParams = req.nextUrl.searchParams
@@ -8,7 +8,7 @@ export async function GET(req: NextRequest) {
   const tag = searchParams.get('tag') ?? undefined
 
   try {
-    const response = await getServerPages({
+    const response = await getPagesServer({
       start_cursor,
       tag
     })
