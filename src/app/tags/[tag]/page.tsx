@@ -1,6 +1,6 @@
 import { Card } from '@/components/elements/card'
 import { Link } from '@/components/elements/link'
-import { getServerPages } from '@/features/articles/api'
+import { getPagesServer } from '@/features/articles/api/get-pages-server'
 import type { Page } from '@/features/articles/types'
 import { getTags } from '@/features/tags/api'
 import { CurrentTag, Tags } from '@/features/tags/components'
@@ -12,7 +12,7 @@ type TagListPageProps = {
 
 export default async function TagListPage({ params }: TagListPageProps) {
   const { tag } = params
-  const { results: pages = [] } = await getServerPages({ page_size: 100, tag })
+  const { results: pages = [] } = await getPagesServer({ page_size: 100, tag })
   const tags = await getTags()
 
   return (
