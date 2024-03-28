@@ -5,7 +5,6 @@ import React, { type ReactNode } from 'react'
 import ReactDOM from 'react-dom'
 import { SWRConfig } from 'swr'
 
-import { Notifications } from '@/components/notifications'
 import { GA_ID } from '@/config'
 
 type AppProviderProps = {
@@ -38,7 +37,6 @@ export const AppProvider = ({ children }: AppProviderProps) => {
             gtag('config', ${JSON.stringify(GA_ID)});
         `}
       </Script>
-      <Notifications />
       {children}
     </SWRConfig>
   )

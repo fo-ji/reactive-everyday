@@ -12,13 +12,12 @@ const Navigation = () => {
   const routes = [
     { name: 'articles', path: '/articles' },
     { name: 'tags', path: '/tags' },
-    { name: 'about', path: '/about' },
-    { name: 'contact', path: '/contact' }
+    { name: 'about', path: '/about' }
   ]
 
   return (
     <div className='mt-4'>
-      <ul className='m-auto -mb-px flex max-w-4xl justify-between border-b border-placeholder text-lg tracking-wide sm:text-3xl'>
+      <ul className='m-auto -mb-px flex max-w-4xl justify-around border-b border-placeholder text-lg tracking-wide sm:text-3xl'>
         {routes.map((route, idx) => (
           <li key={idx}>
             <Link
@@ -45,7 +44,7 @@ const Logo = () => (
       width={240}
       height={40}
       alt='logo'
-      className='h-[40px] w-[240px]'
+      className='h-5 w-32 sm:h-10 sm:w-64'
       priority
       unoptimized
     />
