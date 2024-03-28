@@ -31,16 +31,28 @@ export default function AboutPage() {
         <h2>
           <span>Output</span>
         </h2>
-        <div>
-          <Link
-            href='https://github.com/fo-ji'
-            passHref
-            target='_blank'
-            className='inline-block border-b border-link text-link hover:opacity-40'
-          >
-            GitHub
-          </Link>
-        </div>
+        <ul className='space-y-2'>
+          <li>
+            <Link
+              href='https://github.com/fo-ji'
+              passHref
+              target='_blank'
+              className='inline-block border-b border-link text-link hover:opacity-40'
+            >
+              GitHub
+            </Link>
+          </li>
+          <li>
+            <Link
+              href='https://twitter.com/fo_ji80440'
+              passHref
+              target='_blank'
+              className='inline-block border-b border-link text-link hover:opacity-40'
+            >
+              X
+            </Link>
+          </li>
+        </ul>
       </div>
     </section>
   )

@@ -5,7 +5,7 @@ export const CardSkelton = () => (
   >
     <div className='flex h-36 w-full items-center justify-center rounded bg-gray-300 sm:w-96'>
       <svg
-        className='h-12 w-12 text-gray-200'
+        className='size-12 text-gray-200'
         xmlns='http://www.w3.org/2000/svg'
         aria-hidden='true'
         fill='currentColor'
