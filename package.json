@@ -19,7 +19,7 @@
     "@axe-core/react": "^4.8.5",
     "@notionhq/client": "2.2.14",
     "@tailwindcss/typography": "^0.5.12",
-    "@types/node": "20.12.2",
+    "@types/node": "20.12.3",
     "@types/react": "18.2.74",
     "@types/react-dom": "18.2.23",
     "@types/react-syntax-highlighter": "^15.5.11",
