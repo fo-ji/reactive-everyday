@@ -16,7 +16,7 @@
     "swr": "^2.2.5"
   },
   "devDependencies": {
-    "@axe-core/react": "^4.8.5",
+    "@axe-core/react": "^4.9.0",
     "@notionhq/client": "2.2.14",
     "@tailwindcss/typography": "^0.5.12",
     "@types/node": "20.12.3",
