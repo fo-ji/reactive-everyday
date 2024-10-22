@@ -6,20 +6,22 @@ import { Blocks, PageBackButton } from '@/features/articles/components'
 import { formatDate, formatDiffDate, formatText } from '@/utils/format'
 
 type ArticlePageProps = {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }
 
 export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata | void> {
-  const page: any = await getPage({ pageId: params.id })
+  const { id } = await params
+  const page: any = await getPage({ pageId: id })
   if (page) return { title: formatText(page.properties.name.title) }
 }
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
-  const page: any = await getPage({ pageId: params.id })
+  const { id } = await params
+  const page: any = await getPage({ pageId: id })
 
   if (!page) notFound()
 
-  const { results: blocks } = await getBlocks(params.id)
+  const { results: blocks } = await getBlocks(id)
 
   return (
     <section>
