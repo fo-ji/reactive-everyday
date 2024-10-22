@@ -1,18 +1,11 @@
 {
-  "plugins": [
-    "sort-keys-custom-order",
-    "simple-import-sort",
-    "tailwindcss",
-    "jsx-a11y",
-    "react-hooks"
-  ],
+  "plugins": ["sort-keys-custom-order", "simple-import-sort", "tailwindcss", "jsx-a11y"],
   "extends": [
     "next/core-web-vitals",
     "prettier",
     "plugin:tailwindcss/recommended",
     "plugin:jsx-a11y/recommended",
-    "plugin:react/jsx-runtime",
-    "plugin:react-hooks/recommended"
+    "plugin:react/jsx-runtime"
   ],
   "rules": {
     // For JS objects sorting
