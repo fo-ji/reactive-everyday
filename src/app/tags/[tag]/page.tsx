@@ -7,11 +7,11 @@ import { CurrentTag, Tags } from '@/features/tags/components'
 import { formatCover, formatDate, formatMultiSelect, formatText } from '@/utils'
 
 type TagListPageProps = {
-  params: { tag: string }
+  params: Promise<{ tag: string }>
 }
 
 export default async function TagListPage({ params }: TagListPageProps) {
-  const { tag } = params
+  const { tag } = await params
   const { results: pages = [] } = await getPagesServer({ page_size: 100, tag })
   const tags = await getTags()
 
