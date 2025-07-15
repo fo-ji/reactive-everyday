@@ -349,10 +349,10 @@
   resolved "https://registry.yarnpkg.com/@nolyfill/is-core-module/-/is-core-module-1.0.39.tgz#3dc35ba0f1e66b403c00b39344f870298ebb1c8e"
   integrity sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==
 
-"@notionhq/client@4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@notionhq/client/-/client-4.0.0.tgz#7001b43d3ce3d655e45cfe148ac9e1f611e72022"
-  integrity sha512-repLjfvmiwZ/oKAULpudXZ67VnXaGpr+AbzRXOntO89v8kslVlUfZX/VLgKRzQ0gRWGBabtFp+5YoTRuhQp6jA==
+"@notionhq/client@4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@notionhq/client/-/client-4.0.1.tgz#9dd7c63b88a4e865db85e05d8694c0b9c3eb0d7a"
+  integrity sha512-SdILqiiThECLR2KDUOvl4JqRaJWBwDYaEw/f0qu+G6rKN/QUCkaJ84vN5MgBw1yKsMAsKxBlDazs3Jw6vv2ikA==
 
 "@pkgjs/parseargs@^0.11.0":
   version "0.11.0"
