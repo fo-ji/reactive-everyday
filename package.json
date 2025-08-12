@@ -13,7 +13,7 @@
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "sharp": "^0.34.3",
-    "swr": "^2.3.4"
+    "swr": "^2.3.6"
   },
   "devDependencies": {
     "@axe-core/react": "^4.10.2",
