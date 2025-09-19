@@ -1,6 +1,6 @@
 'use client'
 
-import type { QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints'
+import type { QueryDataSourceResponse } from '@notionhq/client/build/src/api-endpoints'
 import useSWR from 'swr'
 
 import type { Page } from '../types'
@@ -11,7 +11,7 @@ interface GetPagesClientProps {
   tag?: string
 }
 
-interface GetPagesResponse extends Omit<QueryDatabaseResponse, 'results'> {
+interface GetPagesResponse extends Omit<QueryDataSourceResponse, 'results'> {
   results: Page[]
 }
 

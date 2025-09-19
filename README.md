@@ -25,7 +25,7 @@ Please set env and NotionAPI
 
 ```
 NOTION_KEY=
-NOTION_DATABASE_ID=
+NOTION_DATA_SOURCE_ID=
 ```
 
 - NotionAPI
