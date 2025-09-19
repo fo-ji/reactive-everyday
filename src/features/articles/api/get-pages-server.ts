@@ -1,4 +1,4 @@
-import { DATABASE_ID } from '@/config'
+import { DATA_SOURCE_ID } from '@/config'
 import { notion } from '@/lib'
 
 interface GetPagesServerProps {
@@ -32,8 +32,8 @@ export const getPagesServer = async ({
       ]
     : []
 
-  return await notion.databases.query({
-    database_id: DATABASE_ID,
+  return await notion.dataSources.query({
+    data_source_id: DATA_SOURCE_ID,
     filter: {
       and: [...baseFilter, ...tagFilter]
     },

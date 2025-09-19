@@ -1,4 +1,4 @@
-import { DATABASE_ID } from '@/config'
+import { DATA_SOURCE_ID } from '@/config'
 import { notion } from '@/lib'
 import { formatTags } from '@/utils'
 
@@ -7,8 +7,8 @@ export const getTags = async () => {
     const articles = []
     let cursor
     while (true) {
-      const { next_cursor, results } = await notion.databases.query({
-        database_id: DATABASE_ID,
+      const { next_cursor, results } = await notion.dataSources.query({
+        data_source_id: DATA_SOURCE_ID,
         filter: {
           and: [
             {
