@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useEffectEvent, useState } from 'react'
 
 export interface UsePaginationReturn {
   back: () => void
@@ -20,17 +20,23 @@ export const usePagination = () => {
   const [cursor, setCursor] = useState<Cursor>(INITIAL_CURSOR)
   const [cursors, setCursors] = useState<Cursor[]>([INITIAL_CURSOR])
 
-  useEffect(() => {
+  const add = useEffectEvent(() => {
     setCursors((prev) => {
       if (!prev.find((cur) => JSON.stringify(cur) === JSON.stringify(cursor)))
         return [...prev, cursor]
+
       return prev
     })
+  })
+
+  useEffect(() => {
+    add()
   }, [cursor])
 
   const back = useCallback(() => {
     setCursor((prev) => {
       const prevCursor = cursors.find((cursor) => cursor.start === prev.prev)
+
       return {
         prev: prevCursor?.prev,
         start: prev.prev

@@ -1,6 +1,6 @@
 import { notion } from '@/lib'
 
-type GetPageProps = {
+interface GetPageProps {
   pageId: string
 }
 
@@ -9,6 +9,7 @@ export const getPage = async ({ pageId }: GetPageProps) => {
     return await notion.pages.retrieve({ page_id: pageId })
   } catch (error) {
     console.log({ error })
+
     return null
   }
 }

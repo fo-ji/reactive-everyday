@@ -1,5 +1,4 @@
 import type { UsePaginationReturn } from '@/hooks/use-pagination'
-
 import { Button } from '../button'
 
 interface PaginationProps extends UsePaginationReturn {

@@ -1,10 +1,9 @@
-import '@/styles/globals.css'
-
-import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
-
+import type { Metadata } from 'next'
 import { AppLayout } from '@/components/layout'
 import { AppProvider } from '@/providers/app'
+
+import '@/styles/globals.css'
 
 export const metadata: Metadata = {
   title: 'reactな日常',

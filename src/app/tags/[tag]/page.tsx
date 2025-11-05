@@ -6,7 +6,7 @@ import { getTags } from '@/features/tags/api'
 import { CurrentTag, Tags } from '@/features/tags/components'
 import { formatCover, formatDate, formatMultiSelect, formatText } from '@/utils'
 
-type TagListPageProps = {
+interface TagListPageProps {
   params: Promise<{ tag: string }>
 }
 

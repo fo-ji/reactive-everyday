@@ -22,9 +22,11 @@ export const getTags = async () => {
         start_cursor: cursor
       })
       articles.push(...results)
+
       if (!next_cursor) break
       cursor = next_cursor
     }
+
     return formatTags(articles)
   } catch (error) {
     console.log({ error })

@@ -1,6 +1,6 @@
 import { CardSkelton } from './card-skelton'
 
-type CardSkeltonListProps = {
+interface CardSkeltonListProps {
   size?: number
 }
 

@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, PropsWithChildren } from 'react'
+import type { ButtonHTMLAttributes, PropsWithChildren } from 'react'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, PropsWithChildren {}
 

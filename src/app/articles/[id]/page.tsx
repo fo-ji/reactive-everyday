@@ -1,22 +1,25 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-
 import { getBlocks, getPage } from '@/features/articles/api'
 import { Blocks, PageBackButton } from '@/features/articles/components'
 import { formatDate, formatDiffDate, formatText } from '@/utils/format'
 
-type ArticlePageProps = {
+interface ArticlePageProps {
   params: Promise<{ id: string }>
 }
 
 export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata | void> {
   const { id } = await params
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const page: any = await getPage({ pageId: id })
+
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
   if (page) return { title: formatText(page.properties.name.title) }
 }
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
   const { id } = await params
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const page: any = await getPage({ pageId: id })
 
   if (!page) notFound()
@@ -27,7 +30,9 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     <section>
       <article className='w-full'>
         <Header
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
           title={formatText(page.properties.name.title)}
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
           date={formatDate(page.properties.releasedAt.date)}
         />
         <div className='mt-10'>
@@ -41,7 +46,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   )
 }
 
-type HeaderProps = {
+interface HeaderProps {
   title: string
   date: string
 }

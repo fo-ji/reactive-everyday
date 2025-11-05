@@ -1,18 +1,19 @@
 'use client'
 
-import Script from 'next/script'
 import React, { type ReactNode } from 'react'
 import ReactDOM from 'react-dom'
+import Script from 'next/script'
 import { SWRConfig } from 'swr'
-
 import { GA_ID } from '@/config'
 
-type AppProviderProps = {
+interface AppProviderProps {
   children: ReactNode
 }
 
 if (typeof window !== 'undefined' && process.env.NODE_ENV !== 'production') {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-require-imports
   const axe = require('@axe-core/react')
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   axe(React, ReactDOM, 1000)
 }
 
