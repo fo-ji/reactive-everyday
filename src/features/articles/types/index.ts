@@ -1,4 +1,4 @@
-import { ParsedUrlQuery } from 'querystring'
+import type { ParsedUrlQuery } from 'querystring'
 
 export interface Page {
   id: string

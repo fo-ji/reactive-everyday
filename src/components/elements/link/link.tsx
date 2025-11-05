@@ -1,5 +1,6 @@
-import NextLink, { LinkProps as NextLinkProps } from 'next/link'
-import { PropsWithChildren } from 'react'
+import type { PropsWithChildren } from 'react'
+import type { LinkProps as NextLinkProps } from 'next/link'
+import NextLink from 'next/link'
 
 interface LinkProps extends NextLinkProps, PropsWithChildren {
   className?: string

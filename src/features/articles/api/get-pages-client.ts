@@ -2,7 +2,6 @@
 
 import type { QueryDataSourceResponse } from '@notionhq/client/build/src/api-endpoints'
 import useSWR from 'swr'
-
 import type { Page } from '../types'
 
 interface GetPagesClientProps {
@@ -21,12 +20,15 @@ export const getPagesClient = async ({
 }: GetPagesClientProps): Promise<GetPagesResponse | void> => {
   let url = '/api/articles'
   const params: Record<string, string> = {}
+
   if (start_cursor) {
     params.start_cursor = start_cursor
   }
+
   if (tag) {
     params.tag = tag
   }
+
   if (Object.keys(params).length) {
     const query = new URLSearchParams(params).toString()
     url = `${url}?${query}`
@@ -43,7 +45,7 @@ export const getPagesClient = async ({
       throw new Error(res.statusText)
     }
 
-    return res.json()
+    return res.json() as Promise<GetPagesResponse>
   } catch (error) {
     console.log(error)
   }

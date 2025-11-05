@@ -1,10 +1,9 @@
 import { Card } from '@/components/elements/card'
 import { Link } from '@/components/elements/link'
 import { formatCover, formatDate, formatMultiSelect, formatText } from '@/utils'
-
 import type { Page } from '../types'
 
-type ArticlesCardListProps = {
+interface ArticlesCardListProps {
   pages?: Page[]
 }
 export const ArticlesCardList = ({ pages }: ArticlesCardListProps) => {

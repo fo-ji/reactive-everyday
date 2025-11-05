@@ -1,5 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server'
-
+import type { NextRequest } from 'next/server'
+import { NextResponse } from 'next/server'
 import { getPagesServer } from '@/features/articles/api'
 
 export async function GET(req: NextRequest) {
@@ -12,8 +12,12 @@ export async function GET(req: NextRequest) {
       start_cursor,
       tag
     })
+
     return NextResponse.json(response)
   } catch (err) {
-    return Promise.reject(err)
+    const error =
+      err instanceof Error ? err : new Error(typeof err === 'string' ? err : 'Unknown error')
+
+    return NextResponse.json({ error: error.message }, { status: 500 })
   }
 }
