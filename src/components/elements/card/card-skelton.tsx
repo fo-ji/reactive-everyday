@@ -3,7 +3,7 @@ export const CardSkelton = () => (
     role='status'
     className='animate-pulse space-y-8 border-b border-placeholder px-3 py-2 md:flex md:items-center md:space-x-8 md:space-y-0'
   >
-    <div className='flex h-36 w-full items-center justify-center rounded bg-gray-300 sm:w-96'>
+    <div className='flex h-36 w-full items-center justify-center rounded-sm bg-gray-300 sm:w-96'>
       <svg
         className='size-12 text-gray-200'
         xmlns='http://www.w3.org/2000/svg'

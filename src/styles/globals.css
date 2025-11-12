@@ -1,6 +1,37 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --color-accent: #bfbeba;
+  --color-background: #f6f5f0;
+  --color-link: #1155cc;
+  --color-main: #222336;
+  --color-paragraph: #2a2a35;
+  --color-placeholder: #5b6472;
+
+  --color-underline-blue: #5ba8cc;
+  --color-underline-orange: #cc7454;
+  --color-underline-yellow: #cb9642;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -11,7 +42,7 @@ h1 {
 }
 
 h1 > span {
-  background: linear-gradient(transparent 70%, theme(colors.underline.blue) 0%);
+  background: linear-gradient(transparent 70%, var(--color-underline-blue) 0%);
 }
 
 h2 {
@@ -19,7 +50,7 @@ h2 {
 }
 
 h2 > span {
-  background: linear-gradient(transparent 70%, theme(colors.underline.orange) 0%);
+  background: linear-gradient(transparent 70%, var(--color-underline-orange) 0%);
 }
 
 h3 {
@@ -27,7 +58,7 @@ h3 {
 }
 
 h3 > span {
-  background: linear-gradient(transparent 70%, theme(colors.underline.yellow) 0%);
+  background: linear-gradient(transparent 70%, var(--color-underline-yellow) 0%);
 }
 
 p {
@@ -39,7 +70,7 @@ p {
 }
 
 .nbr-inline-code {
-  @apply text-pink-700 text-sm px-2 py-1 font-normal bg-gray-100 rounded break-words;
+  @apply text-pink-700 text-sm px-2 py-1 font-normal bg-gray-100 rounded-sm wrap-break-word;
 }
 
 .nbr-caption {
@@ -63,16 +94,16 @@ p {
 }
 
 .nbr-block-code pre::-webkit-scrollbar {
-  @apply hidden !important;
+  @apply hidden!;
 }
 
 .nbr-block-code .syntax-highlighter-pre {
   @apply rounded-lg;
-  @apply p-5 !important;
+  @apply p-5!;
 }
 
 .nbr-block-callout {
-  @apply bg-gray-100 pr-6 py-5 pl-4 rounded flex;
+  @apply bg-gray-100 pr-6 py-5 pl-4 rounded-sm flex;
 }
 
 .nbr-block-callout .nbr-icon {
@@ -102,7 +133,7 @@ p {
 }
 
 .nbr-block-table_of_contents {
-  @apply p-5 list-disc bg-gray-100 rounded;
+  @apply p-5 list-disc bg-gray-100 rounded-sm;
 }
 
 .nbr-block-table_of_contents > div {

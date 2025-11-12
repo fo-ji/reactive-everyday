@@ -70,7 +70,7 @@ const Footer = () => (
 export const AppLayout = ({ children }: { children: ReactNode }) => (
   <div className='min-h-screen bg-background p-8'>
     <Header />
-    <main className='min-h-[calc(100vh_-_200px)] py-8'>
+    <main className='min-h-[calc(100vh-200px)] py-8'>
       <div className='m-auto max-w-4xl'>{children}</div>
     </main>
     <Footer />
