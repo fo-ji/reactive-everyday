@@ -24,7 +24,7 @@ export const Card = ({ title, cover, date, tags }: CardProps) => (
           />
         </div>
       </div>
-      <div className='flex flex-col justify-between gap-2 tracking-wide sm:w-[calc(100%_-_144px)] sm:gap-4'>
+      <div className='flex flex-col justify-between gap-2 tracking-wide sm:w-[calc(100%-144px)] sm:gap-4'>
         <div className='flex justify-end gap-4 text-sm font-normal text-placeholder sm:gap-8 sm:text-lg'>
           <div>{date}</div>
           <div>{formatDiffDate(date)}</div>

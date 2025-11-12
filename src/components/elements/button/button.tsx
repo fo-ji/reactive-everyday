@@ -4,7 +4,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, PropsWith
 
 export const Button = ({
   children,
-  className = 'rounded bg-main py-2 px-4 font-bold text-white hover:opacity-75',
+  className = 'rounded-sm bg-main py-2 px-4 font-bold text-white hover:opacity-75',
   type = 'button',
   ...props
 }: ButtonProps) => (
