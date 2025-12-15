@@ -19,7 +19,7 @@
   "devDependencies": {
     "@axe-core/react": "^4.11.0",
     "@eslint/js": "^9.39.1",
-    "@next/eslint-plugin-next": "^16.0.8",
+    "@next/eslint-plugin-next": "^16.0.10",
     "@notionhq/client": "5.4.0",
     "@stylistic/eslint-plugin": "^5.6.1",
     "@tailwindcss/postcss": "^4.1.17",
