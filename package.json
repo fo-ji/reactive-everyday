@@ -23,7 +23,7 @@
     "@notionhq/client": "5.22.0",
     "@stylistic/eslint-plugin": "^5.10.0",
     "@tailwindcss/postcss": "^4.3.0",
-    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/typography": "^0.5.20",
     "@types/node": "25.9.1",
     "@types/react": "19.2.17",
     "@types/react-dom": "19.2.3",
