@@ -20,7 +20,7 @@
     "@axe-core/react": "^4.12.1",
     "@eslint/js": "^10.0.1",
     "@next/eslint-plugin-next": "^16.2.10",
-    "@notionhq/client": "5.23.1",
+    "@notionhq/client": "5.23.2",
     "@stylistic/eslint-plugin": "^5.10.0",
     "@tailwindcss/postcss": "^4.3.2",
     "@tailwindcss/typography": "^0.5.20",
