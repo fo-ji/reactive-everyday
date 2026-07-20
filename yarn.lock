@@ -740,10 +740,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@notionhq/client@5.23.1":
-  version "5.23.1"
-  resolved "https://registry.yarnpkg.com/@notionhq/client/-/client-5.23.1.tgz#eb10aeba1387a6031443e8c7238cd045b45c6c78"
-  integrity sha512-Y0jhh0ulft1x1c3uHFzBMHHQZzdfpCUV5JNFAZxzmjKEIkephQ0fle0g0ZqxTmHl1vP1ZOjzq0v47Ao4udBevw==
+"@notionhq/client@5.23.2":
+  version "5.23.2"
+  resolved "https://registry.yarnpkg.com/@notionhq/client/-/client-5.23.2.tgz#7aaae8bd7dc03a28a3f2bbdf1677df6ccabd7ce6"
+  integrity sha512-iyD5VU9MoNxCR0GespotyrMlBpO4kLG+BaZK2JpZW1yfFqrmOYmZGb3wl4xqfq3n1Z9eekFwNcZD6t63SaESig==
 
 "@rtsao/scc@^1.1.0":
   version "1.1.0"
