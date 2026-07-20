@@ -22,7 +22,7 @@
     "@next/eslint-plugin-next": "^16.2.10",
     "@notionhq/client": "5.23.2",
     "@stylistic/eslint-plugin": "^5.10.0",
-    "@tailwindcss/postcss": "^4.3.2",
+    "@tailwindcss/postcss": "^4.3.3",
     "@tailwindcss/typography": "^0.5.20",
     "@types/node": "26.1.1",
     "@types/react": "19.2.17",
